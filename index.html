@@ -1,1 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b57">
+  <title>MeriBiz PNG | Sell. Track. Grow.</title>
+  <style>
+    :root { --green:#176b57; --green-dark:#104c40; --cream:#f7f7f1; --ink:#18231f; --muted:#66736d; --line:#e1e7e2; --white:#fff; --coral:#f1a18b; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--cream); }
+    header { background:var(--green); color:white; padding:22px 16px 26px; }
+    .wrap { width:min(1050px,100% - 28px); margin:auto; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; font-size:1.15rem; }
+    .logo { display:grid; place-items:center; background:var(--coral); color:#21372e; border-radius:12px; width:42px; height:42px; font-weight:900; }
+    .hero { padding:24px 0 8px; max-width:680px; }
+    .hero h1 { font-size:clamp(1.8rem,5vw,3rem); line-height:1.08; margin:0 0 10px; }
+    .hero p { color:#e3f0e9; margin:0; line-height:1.5; }
+    main { padding:18px 0 40px; }
+    .notice { background:#fff5df; border:1px solid #f0dca7; border-radius:12px; padding:12px 14px; color:#59461a; font-size:.9rem; margin-bottom:16px; }
+    .tabs { display:flex; gap:8px; overflow:auto; padding:2px 0 14px; }
+    .tab { border:1px solid var(--line); background:white; border-radius:999px; padding:10px 15px; font-weight:700; white-space:nowrap; cursor:pointer; color:var(--ink); }
+    .tab.active { background:var(--green); color:white; border-color:var(--green); }
+    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+    .card { grid-column:span 12; background:white; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 2px 8px #17271d08; }
+    .card h2 { margin:0 0 12px; font-size:1.1rem; }
+    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:14px; }
+    .stat { background:#f2f7f3; border-radius:12px; padding:12px; min-width:0; }
+    .stat small { display:block; color:var(--muted); margin-bottom:6px; }
+    .stat strong { display:block; font-size:clamp(1rem,3.6vw,1.4rem); overflow-wrap:anywhere; }
+    label { display:block; font-size:.88rem; font-weight:700; margin:10px 0 5px; }
+    input,select,textarea { width:100%; border:1px solid #ccd8d0; border-radius:10px; padding:11px 12px; font:inherit; background:white; color:var(--ink); }
+    button,.button { border:0; background:var(--green); color:white; font:inherit; font-weight:750; padding:11px 14px; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-flex; justify-content:center; align-items:center; gap:6px; }
+    button:hover,.button:hover { background:var(--green-dark); }
+    .secondary { background:#edf4ef; color:var(--green-dark); }
+    .danger { background:#fff0ed; color:#9a3020; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:8px; }
+    .form-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .muted { color:var(--muted); font-size:.9rem; }
+    .product-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .product { border:1px solid var(--line); border-radius:14px; padding:13px; display:flex; flex-direction:column; gap:8px; }
+    .product-top { display:flex; gap:10px; align-items:flex-start; }
+    .product-icon { background:#f4e8d7; border-radius:10px; width:48px; height:48px; display:grid; place-items:center; font-size:1.5rem; flex-shrink:0; }
+    .product h3 { margin:0 0 3px; font-size:1rem; }
+    .price { color:var(--green); font-weight:850; }
+    .product-actions { display:flex; gap:7px; flex-wrap:wrap; margin-top:auto; }
+    .product-actions button,.product-actions a { font-size:.85rem; padding:8px 10px; }
+    .hidden { display:none !important; }
+    .empty { padding:24px 12px; text-align:center; color:var(--muted); border:1px dashed #cbd7ce; border-radius:12px; }
+    .row-between { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; }
+    .record { display:flex; justify-content:space-between; align-items:center; gap:12px; border-bottom:1px solid var(--line); padding:11px 0; }
+    .record:last-child { border-bottom:0; }
+    footer { text-align:center; color:var(--muted); padding:18px 12px 28px; font-size:.85rem; }
+    @media(min-width:720px) {
+      .card.half { grid-column:span 6; }
+      .form-grid.two { grid-template-columns:1fr 1fr; }
+      header { padding-top:28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand"><div class="logo">M</div><div>MeriBiz <span style="font-weight:500">PNG</span></div></div>
+      <div class="hero">
+        <h1>Sell. Track. Grow.</h1>
+        <p>A simple business companion for women entrepreneurs across Papua New Guinea.</p>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="notice"><strong>Prototype:</strong> This demo saves data only in this browser on this device. Do not enter sensitive information. It does not yet have secure accounts or cloud backup.</div>
+    <nav class="tabs" aria-label="Main sections">
+      <button class="tab active" data-tab="dashboard">Overview</button>
+      <button class="tab" data-tab="products">My Products</button>
+      <button class="tab" data-tab="records">Sales & Expenses</button>
+      <button class="tab" data-tab="store">My Store</button>
+    </nav>
 
+    <section id="dashboard" class="page">
+      <div class="stats">
+        <div class="stat"><small>Sales recorded</small><strong id="salesTotal">K0.00</strong></div>
+        <div class="stat"><small>Expenses recorded</small><strong id="expenseTotal">K0.00</strong></div>
+        <div class="stat"><small>Balance*</small><strong id="balanceTotal">K0.00</strong></div>
+      </div>
+      <div class="grid">
+        <div class="card half">
+          <h2>Quick sale</h2>
+          <p class="muted">Record a sale when a customer buys something.</p>
+          <form id="saleForm">
+            <label for="saleItem">Item / service</label><input id="saleItem" required placeholder="e.g. Bilum bag">
+            <div class="form-grid two">
+              <div><label for="saleAmount">Amount (K)</label><input id="saleAmount" type="number" min="0.01" step="0.01" required placeholder="45.00"></div>
+              <div><label for="saleDate">Date</label><input id="saleDate" type="date" required></div>
+            </div>
+            <div class="form-actions"><button type="submit">Save sale</button></div>
+          </form>
+        </div>
+        <div class="card half">
+          <h2>Quick expense</h2>
+          <p class="muted">Record business costs such as stock, transport or packaging.</p>
+          <form id="expenseForm">
+            <label for="expenseItem">Expense description</label><input id="expenseItem" required placeholder="e.g. Materials">
+            <div class="form-grid two">
+              <div><label for="expenseAmount">Amount (K)</label><input id="expenseAmount" type="number" min="0.01" step="0.01" required placeholder="20.00"></div>
+              <div><label for="expenseDate">Date</label><input id="expenseDate" type="date" required></div>
+            </div>
+            <div class="form-actions"><button type="submit">Save expense</button></div>
+          </form>
+        </div>
+        <div class="card">
+          <div class="row-between"><h2>Recent activity</h2><span class="muted">Latest 5 records</span></div>
+          <div id="recentRecords" class="empty">Your sales and expenses will appear here.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="page hidden">
+      <div class="grid">
+        <div class="card half">
+          <h2>Add a product or service</h2>
+          <form id="productForm">
+            <label for="productName">Name</label><input id="productName" required placeholder="e.g. Handmade bilum">
+            <div class="form-grid two">
+              <div><label for="productPrice">Price (K)</label><input id="productPrice" type="number" min="0" step="0.01" required placeholder="45"></div>
+              <div><label for="productCategory">Category</label><select id="productCategory"><option>Clothing & crafts</option><option>Food & produce</option><option>Beauty</option><option>Services</option><option>Other</option></select></div>
+            </div>
+            <label for="productDescription">Short description</label><textarea id="productDescription" rows="2" placeholder="Size, colour, location or other details"></textarea>
+            <label for="sellerWhatsApp">WhatsApp number (optional)</label><input id="sellerWhatsApp" inputmode="tel" placeholder="675XXXXXXXX">
+            <div class="form-actions"><button type="submit">Add to my products</button></div>
+          </form>
+        </div>
+        <div class="card half">
+          <h2>My product list</h2>
+          <p class="muted">Add clear descriptions and fair prices. This prototype does not upload product photos yet.</p>
+          <div id="productList" class="product-list"><div class="empty">No products added yet.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="records" class="page hidden">
+      <div class="card">
+        <div class="row-between"><h2>Sales & expenses</h2><button class="secondary" id="exportCsv" type="button">Export records (CSV)</button></div>
+        <p class="muted">Use this as a simple recordbook. Balance is sales minus recorded expenses, not guaranteed profit.</p>
+        <div id="allRecords"><div class="empty">No records yet.</div></div>
+      </div>
+    </section>
+
+    <section id="store" class="page hidden">
+      <div class="card">
+        <h2>My store details</h2>
+        <p class="muted">These details appear on your preview store. A future version can publish a shareable store link.</p>
+        <form id="storeForm">
+          <div class="form-grid two">
+            <div><label for="storeName">Business name</label><input id="storeName" placeholder="e.g. Kail's Sales" required></div>
+            <div><label for="storeLocation">Town / province</label><input id="storeLocation" placeholder="e.g. Goroka, Eastern Highlands"></div>
+          </div>
+          <label for="storeAbout">About the business</label><textarea id="storeAbout" rows="3" placeholder="What do you sell, and what makes your business special?"></textarea>
+          <label for="storePhone">Contact number (optional)</label><input id="storePhone" inputmode="tel" placeholder="675XXXXXXXX">
+          <div class="form-actions"><button type="submit">Save store details</button><button class="secondary" type="button" id="previewStore">Preview store</button></div>
+        </form>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <div id="storePreview"><div class="empty">Save your business details to see a preview here.</div></div>
+      </div>
+    </section>
+  </main>
+  <footer>MeriBiz PNG · Built to help women-owned businesses sell, track and grow.</footer>
+
+  <script>
+    const KEY = "meribiz-png-demo-v1";
+    const blank = { products: [], records: [], store: { name:"", location:"", about:"", phone:"" } };
+    let data;
+    try { data = { ...blank, ...JSON.parse(localStorage.getItem(KEY) || "{}") }; }
+    catch { data = structuredClone(blank); }
+    data.products ||= []; data.records ||= []; data.store ||= { ...blank.store };
+    const $ = id => document.getElementById(id);
+    const money = n => "K" + Number(n || 0).toLocaleString("en-PG", { minimumFractionDigits:2, maximumFractionDigits:2 });
+    const today = new Date().toLocaleDateString("en-CA");
+    ["saleDate","expenseDate"].forEach(id => $(id).value = today);
+    function save() { localStorage.setItem(KEY, JSON.stringify(data)); render(); }
+    function escapeHtml(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])); }
+    function tab(name) {
+      document.querySelectorAll(".page").forEach(p => p.classList.toggle("hidden", p.id !== name));
+      document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === name));
+    }
+    document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => tab(b.dataset.tab)));
+    function addRecord(type, item, amount, date) {
+      data.records.unshift({ id: Date.now().toString() + Math.random().toString(16).slice(2), type, item, amount:Number(amount), date });
+      save();
+    }
+    $("saleForm").addEventListener("submit", e => {
+      e.preventDefault(); addRecord("Sale", $("saleItem").value.trim(), $("saleAmount").value, $("saleDate").value);
+      e.target.reset(); $("saleDate").value = today;
+    });
+    $("expenseForm").addEventListener("submit", e => {
+      e.preventDefault(); addRecord("Expense", $("expenseItem").value.trim(), $("expenseAmount").value, $("expenseDate").value);
+      e.target.reset(); $("expenseDate").value = today;
+    });
+    $("productForm").addEventListener("submit", e => {
+      e.preventDefault();
+      data.products.unshift({ id: Date.now().toString(), name:$("productName").value.trim(), price:Number($("productPrice").value), category:$("productCategory").value, description:$("productDescription").value.trim(), whatsapp:$("sellerWhatsApp").value.trim() });
+      save(); e.target.reset();
+    });
+    $("storeForm").addEventListener("submit", e => {
+      e.preventDefault();
+      data.store = { name:$("storeName").value.trim(), location:$("storeLocation").value.trim(), about:$("storeAbout").value.trim(), phone:$("storePhone").value.trim() };
+      save(); renderStore();
+    });
+    $("previewStore").addEventListener("click", () => { renderStore(); $("storePreview").scrollIntoView({behavior:"smooth", block:"nearest"}); });
+    function renderStore() {
+      const s = data.store;
+      $("storeName").value = s.name || ""; $("storeLocation").value = s.location || ""; $("storeAbout").value = s.about || ""; $("storePhone").value = s.phone || "";
+      const products = data.products.map(p => `<div class="product"><div class="product-top"><div class="product-icon">🛍️</div><div><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="muted">${escapeHtml(p.category)}</div></div></div><p class="muted">${escapeHtml(p.description)}</p></div>`).join("");
+      $("storePreview").innerHTML = s.name ? `<h2>${escapeHtml(s.name)}</h2><p class="muted">${escapeHtml(s.location)}</p><p>${escapeHtml(s.about)}</p><hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><h2>Products</h2><div class="product-list">${products || '<div class="empty">Add products to show them here.</div>'}</div>` : '<div class="empty">Add your business name and save to preview your store.</div>';
+    }
+    function renderProducts() {
+      $("productList").innerHTML = data.products.length ? data.products.map(p => {
+        const phone = (p.whatsapp || data.store.phone || "").replace(/\D/g,"");
+        const msg = encodeURIComponent(`Hello, I'm interested in ${p.name} listed for ${money(p.price)}.`);
+        const link = phone ? `<a class="button secondary" target="_blank" rel="noopener" href="https://wa.me/${phone}?text=${msg}">WhatsApp order</a>` : "";
+        return `<article class="product"><div class="product-top"><div class="product-icon">🛍️</div><div><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="muted">${escapeHtml(p.category)}</div></div></div><p class="muted">${escapeHtml(p.description || "No description added.")}</p><div class="product-actions">${link}<button class="danger" data-delete-product="${p.id}" type="button">Remove</button></div></article>`;
+      }).join("") : '<div class="empty">No products added yet. Use the form to add your first product.</div>';
+      document.querySelectorAll("[data-delete-product]").forEach(b => b.addEventListener("click", () => {
+        if (confirm("Remove this product?")) { data.products = data.products.filter(p => p.id !== b.dataset.deleteProduct); save(); }
+      }));
+    }
+    function recordHtml(r) {
+      const positive = r.type === "Sale";
+      return `<div class="record"><div><strong>${escapeHtml(r.item)}</strong><div class="muted">${escapeHtml(r.date)} · ${escapeHtml(r.type)}</div></div><div style="text-align:right"><strong style="color:${positive ? "var(--green)" : "#a23b2b"}">${positive ? "+" : "−"}${money(r.amount)}</strong><div><button class="danger" type="button" data-delete-record="${r.id}" style="padding:5px 8px;font-size:.78rem;margin-top:5px">Delete</button></div></div></div>`;
+    }
+    function bindRecordDeletes() {
+      document.querySelectorAll("[data-delete-record]").forEach(b => b.addEventListener("click", () => {
+        if (confirm("Delete this record?")) { data.records = data.records.filter(r => r.id !== b.dataset.deleteRecord); save(); }
+      }));
+    }
+    function render() {
+      const sales = data.records.filter(r => r.type === "Sale").reduce((s,r) => s+r.amount,0);
+      const expenses = data.records.filter(r => r.type === "Expense").reduce((s,r) => s+r.amount,0);
+      $("salesTotal").textContent = money(sales); $("expenseTotal").textContent = money(expenses); $("balanceTotal").textContent = money(sales-expenses);
+      $("recentRecords").innerHTML = data.records.length ? data.records.slice(0,5).map(recordHtml).join("") : '<div class="empty">Your sales and expenses will appear here.</div>';
+      $("allRecords").innerHTML = data.records.length ? data.records.map(recordHtml).join("") : '<div class="empty">No records yet.</div>';
+      bindRecordDeletes(); renderProducts(); renderStore();
+    }
+    $("exportCsv").addEventListener("click", () => {
+      const rows = [["Date","Type","Description","Amount (PGK)"], ...data.records.map(r => [r.date,r.type,r.item,r.amount])];
+      const csv = rows.map(row => row.map(v => `"${String(v).replace(/"/g,'""')}"`).join(",")).join("\r\n");
+      const blob = new Blob(["\uFEFF"+csv], {type:"text/csv;charset=utf-8;"});
+      const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href=url; a.download="meribiz-records.csv"; a.click(); URL.revokeObjectURL(url);
+    });
+    render();
+  </script>
+</body>
+</html>
