@@ -1,254 +1,48 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#176b57">
-  <title>MeriBiz PNG | Sell. Track. Grow.</title>
-  <style>
-    :root { --green:#176b57; --green-dark:#104c40; --cream:#f7f7f1; --ink:#18231f; --muted:#66736d; --line:#e1e7e2; --white:#fff; --coral:#f1a18b; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--cream); }
-    header { background:var(--green); color:white; padding:22px 16px 26px; }
-    .wrap { width:min(1050px,100% - 28px); margin:auto; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; font-size:1.15rem; }
-    .logo { display:grid; place-items:center; background:var(--coral); color:#21372e; border-radius:12px; width:42px; height:42px; font-weight:900; }
-    .hero { padding:24px 0 8px; max-width:680px; }
-    .hero h1 { font-size:clamp(1.8rem,5vw,3rem); line-height:1.08; margin:0 0 10px; }
-    .hero p { color:#e3f0e9; margin:0; line-height:1.5; }
-    main { padding:18px 0 40px; }
-    .notice { background:#fff5df; border:1px solid #f0dca7; border-radius:12px; padding:12px 14px; color:#59461a; font-size:.9rem; margin-bottom:16px; }
-    .tabs { display:flex; gap:8px; overflow:auto; padding:2px 0 14px; }
-    .tab { border:1px solid var(--line); background:white; border-radius:999px; padding:10px 15px; font-weight:700; white-space:nowrap; cursor:pointer; color:var(--ink); }
-    .tab.active { background:var(--green); color:white; border-color:var(--green); }
-    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .card { grid-column:span 12; background:white; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 2px 8px #17271d08; }
-    .card h2 { margin:0 0 12px; font-size:1.1rem; }
-    .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:14px; }
-    .stat { background:#f2f7f3; border-radius:12px; padding:12px; min-width:0; }
-    .stat small { display:block; color:var(--muted); margin-bottom:6px; }
-    .stat strong { display:block; font-size:clamp(1rem,3.6vw,1.4rem); overflow-wrap:anywhere; }
-    label { display:block; font-size:.88rem; font-weight:700; margin:10px 0 5px; }
-    input,select,textarea { width:100%; border:1px solid #ccd8d0; border-radius:10px; padding:11px 12px; font:inherit; background:white; color:var(--ink); }
-    button,.button { border:0; background:var(--green); color:white; font:inherit; font-weight:750; padding:11px 14px; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-flex; justify-content:center; align-items:center; gap:6px; }
-    button:hover,.button:hover { background:var(--green-dark); }
-    .secondary { background:#edf4ef; color:var(--green-dark); }
-    .danger { background:#fff0ed; color:#9a3020; }
-    .form-grid { display:grid; grid-template-columns:1fr; gap:8px; }
-    .form-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-    .muted { color:var(--muted); font-size:.9rem; }
-    .product-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-    .product { border:1px solid var(--line); border-radius:14px; padding:13px; display:flex; flex-direction:column; gap:8px; }
-    .product-top { display:flex; gap:10px; align-items:flex-start; }
-    .product-icon { background:#f4e8d7; border-radius:10px; width:48px; height:48px; display:grid; place-items:center; font-size:1.5rem; flex-shrink:0; }
-    .product h3 { margin:0 0 3px; font-size:1rem; }
-    .price { color:var(--green); font-weight:850; }
-    .product-actions { display:flex; gap:7px; flex-wrap:wrap; margin-top:auto; }
-    .product-actions button,.product-actions a { font-size:.85rem; padding:8px 10px; }
-    .hidden { display:none !important; }
-    .empty { padding:24px 12px; text-align:center; color:var(--muted); border:1px dashed #cbd7ce; border-radius:12px; }
-    .row-between { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; }
-    .record { display:flex; justify-content:space-between; align-items:center; gap:12px; border-bottom:1px solid var(--line); padding:11px 0; }
-    .record:last-child { border-bottom:0; }
-    footer { text-align:center; color:var(--muted); padding:18px 12px 28px; font-size:.85rem; }
-    @media(min-width:720px) {
-      .card.half { grid-column:span 6; }
-      .form-grid.two { grid-template-columns:1fr 1fr; }
-      header { padding-top:28px; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <div class="brand"><div class="logo">M</div><div>MeriBiz <span style="font-weight:500">PNG</span></div></div>
-      <div class="hero">
-        <h1>Sell. Track. Grow.</h1>
-        <p>A simple business companion for women entrepreneurs across Papua New Guinea.</p>
-      </div>
-    </div>
-  </header>
-  <main class="wrap">
-    <div class="notice"><strong>Prototype:</strong> This demo saves data only in this browser on this device. Do not enter sensitive information. It does not yet have secure accounts or cloud backup.</div>
-    <nav class="tabs" aria-label="Main sections">
-      <button class="tab active" data-tab="dashboard">Overview</button>
-      <button class="tab" data-tab="products">My Products</button>
-      <button class="tab" data-tab="records">Sales & Expenses</button>
-      <button class="tab" data-tab="store">My Store</button>
-    </nav>
-
-    <section id="dashboard" class="page">
-      <div class="stats">
-        <div class="stat"><small>Sales recorded</small><strong id="salesTotal">K0.00</strong></div>
-        <div class="stat"><small>Expenses recorded</small><strong id="expenseTotal">K0.00</strong></div>
-        <div class="stat"><small>Balance*</small><strong id="balanceTotal">K0.00</strong></div>
-      </div>
-      <div class="grid">
-        <div class="card half">
-          <h2>Quick sale</h2>
-          <p class="muted">Record a sale when a customer buys something.</p>
-          <form id="saleForm">
-            <label for="saleItem">Item / service</label><input id="saleItem" required placeholder="e.g. Bilum bag">
-            <div class="form-grid two">
-              <div><label for="saleAmount">Amount (K)</label><input id="saleAmount" type="number" min="0.01" step="0.01" required placeholder="45.00"></div>
-              <div><label for="saleDate">Date</label><input id="saleDate" type="date" required></div>
-            </div>
-            <div class="form-actions"><button type="submit">Save sale</button></div>
-          </form>
-        </div>
-        <div class="card half">
-          <h2>Quick expense</h2>
-          <p class="muted">Record business costs such as stock, transport or packaging.</p>
-          <form id="expenseForm">
-            <label for="expenseItem">Expense description</label><input id="expenseItem" required placeholder="e.g. Materials">
-            <div class="form-grid two">
-              <div><label for="expenseAmount">Amount (K)</label><input id="expenseAmount" type="number" min="0.01" step="0.01" required placeholder="20.00"></div>
-              <div><label for="expenseDate">Date</label><input id="expenseDate" type="date" required></div>
-            </div>
-            <div class="form-actions"><button type="submit">Save expense</button></div>
-          </form>
-        </div>
-        <div class="card">
-          <div class="row-between"><h2>Recent activity</h2><span class="muted">Latest 5 records</span></div>
-          <div id="recentRecords" class="empty">Your sales and expenses will appear here.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="products" class="page hidden">
-      <div class="grid">
-        <div class="card half">
-          <h2>Add a product or service</h2>
-          <form id="productForm">
-            <label for="productName">Name</label><input id="productName" required placeholder="e.g. Handmade bilum">
-            <div class="form-grid two">
-              <div><label for="productPrice">Price (K)</label><input id="productPrice" type="number" min="0" step="0.01" required placeholder="45"></div>
-              <div><label for="productCategory">Category</label><select id="productCategory"><option>Clothing & crafts</option><option>Food & produce</option><option>Beauty</option><option>Services</option><option>Other</option></select></div>
-            </div>
-            <label for="productDescription">Short description</label><textarea id="productDescription" rows="2" placeholder="Size, colour, location or other details"></textarea>
-            <label for="sellerWhatsApp">WhatsApp number (optional)</label><input id="sellerWhatsApp" inputmode="tel" placeholder="675XXXXXXXX">
-            <div class="form-actions"><button type="submit">Add to my products</button></div>
-          </form>
-        </div>
-        <div class="card half">
-          <h2>My product list</h2>
-          <p class="muted">Add clear descriptions and fair prices. This prototype does not upload product photos yet.</p>
-          <div id="productList" class="product-list"><div class="empty">No products added yet.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="records" class="page hidden">
-      <div class="card">
-        <div class="row-between"><h2>Sales & expenses</h2><button class="secondary" id="exportCsv" type="button">Export records (CSV)</button></div>
-        <p class="muted">Use this as a simple recordbook. Balance is sales minus recorded expenses, not guaranteed profit.</p>
-        <div id="allRecords"><div class="empty">No records yet.</div></div>
-      </div>
-    </section>
-
-    <section id="store" class="page hidden">
-      <div class="card">
-        <h2>My store details</h2>
-        <p class="muted">These details appear on your preview store. A future version can publish a shareable store link.</p>
-        <form id="storeForm">
-          <div class="form-grid two">
-            <div><label for="storeName">Business name</label><input id="storeName" placeholder="e.g. Kail's Sales" required></div>
-            <div><label for="storeLocation">Town / province</label><input id="storeLocation" placeholder="e.g. Goroka, Eastern Highlands"></div>
-          </div>
-          <label for="storeAbout">About the business</label><textarea id="storeAbout" rows="3" placeholder="What do you sell, and what makes your business special?"></textarea>
-          <label for="storePhone">Contact number (optional)</label><input id="storePhone" inputmode="tel" placeholder="675XXXXXXXX">
-          <div class="form-actions"><button type="submit">Save store details</button><button class="secondary" type="button" id="previewStore">Preview store</button></div>
-        </form>
-      </div>
-      <div class="card" style="margin-top:14px">
-        <div id="storePreview"><div class="empty">Save your business details to see a preview here.</div></div>
-      </div>
-    </section>
-  </main>
-  <footer>MeriBiz PNG · Built to help women-owned businesses sell, track and grow.</footer>
-
-  <script>
-    const KEY = "meribiz-png-demo-v1";
-    const blank = { products: [], records: [], store: { name:"", location:"", about:"", phone:"" } };
-    let data;
-    try { data = { ...blank, ...JSON.parse(localStorage.getItem(KEY) || "{}") }; }
-    catch { data = structuredClone(blank); }
-    data.products ||= []; data.records ||= []; data.store ||= { ...blank.store };
-    const $ = id => document.getElementById(id);
-    const money = n => "K" + Number(n || 0).toLocaleString("en-PG", { minimumFractionDigits:2, maximumFractionDigits:2 });
-    const today = new Date().toLocaleDateString("en-CA");
-    ["saleDate","expenseDate"].forEach(id => $(id).value = today);
-    function save() { localStorage.setItem(KEY, JSON.stringify(data)); render(); }
-    function escapeHtml(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])); }
-    function tab(name) {
-      document.querySelectorAll(".page").forEach(p => p.classList.toggle("hidden", p.id !== name));
-      document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === name));
-    }
-    document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => tab(b.dataset.tab)));
-    function addRecord(type, item, amount, date) {
-      data.records.unshift({ id: Date.now().toString() + Math.random().toString(16).slice(2), type, item, amount:Number(amount), date });
-      save();
-    }
-    $("saleForm").addEventListener("submit", e => {
-      e.preventDefault(); addRecord("Sale", $("saleItem").value.trim(), $("saleAmount").value, $("saleDate").value);
-      e.target.reset(); $("saleDate").value = today;
-    });
-    $("expenseForm").addEventListener("submit", e => {
-      e.preventDefault(); addRecord("Expense", $("expenseItem").value.trim(), $("expenseAmount").value, $("expenseDate").value);
-      e.target.reset(); $("expenseDate").value = today;
-    });
-    $("productForm").addEventListener("submit", e => {
-      e.preventDefault();
-      data.products.unshift({ id: Date.now().toString(), name:$("productName").value.trim(), price:Number($("productPrice").value), category:$("productCategory").value, description:$("productDescription").value.trim(), whatsapp:$("sellerWhatsApp").value.trim() });
-      save(); e.target.reset();
-    });
-    $("storeForm").addEventListener("submit", e => {
-      e.preventDefault();
-      data.store = { name:$("storeName").value.trim(), location:$("storeLocation").value.trim(), about:$("storeAbout").value.trim(), phone:$("storePhone").value.trim() };
-      save(); renderStore();
-    });
-    $("previewStore").addEventListener("click", () => { renderStore(); $("storePreview").scrollIntoView({behavior:"smooth", block:"nearest"}); });
-    function renderStore() {
-      const s = data.store;
-      $("storeName").value = s.name || ""; $("storeLocation").value = s.location || ""; $("storeAbout").value = s.about || ""; $("storePhone").value = s.phone || "";
-      const products = data.products.map(p => `<div class="product"><div class="product-top"><div class="product-icon">🛍️</div><div><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="muted">${escapeHtml(p.category)}</div></div></div><p class="muted">${escapeHtml(p.description)}</p></div>`).join("");
-      $("storePreview").innerHTML = s.name ? `<h2>${escapeHtml(s.name)}</h2><p class="muted">${escapeHtml(s.location)}</p><p>${escapeHtml(s.about)}</p><hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><h2>Products</h2><div class="product-list">${products || '<div class="empty">Add products to show them here.</div>'}</div>` : '<div class="empty">Add your business name and save to preview your store.</div>';
-    }
-    function renderProducts() {
-      $("productList").innerHTML = data.products.length ? data.products.map(p => {
-        const phone = (p.whatsapp || data.store.phone || "").replace(/\D/g,"");
-        const msg = encodeURIComponent(`Hello, I'm interested in ${p.name} listed for ${money(p.price)}.`);
-        const link = phone ? `<a class="button secondary" target="_blank" rel="noopener" href="https://wa.me/${phone}?text=${msg}">WhatsApp order</a>` : "";
-        return `<article class="product"><div class="product-top"><div class="product-icon">🛍️</div><div><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="muted">${escapeHtml(p.category)}</div></div></div><p class="muted">${escapeHtml(p.description || "No description added.")}</p><div class="product-actions">${link}<button class="danger" data-delete-product="${p.id}" type="button">Remove</button></div></article>`;
-      }).join("") : '<div class="empty">No products added yet. Use the form to add your first product.</div>';
-      document.querySelectorAll("[data-delete-product]").forEach(b => b.addEventListener("click", () => {
-        if (confirm("Remove this product?")) { data.products = data.products.filter(p => p.id !== b.dataset.deleteProduct); save(); }
-      }));
-    }
-    function recordHtml(r) {
-      const positive = r.type === "Sale";
-      return `<div class="record"><div><strong>${escapeHtml(r.item)}</strong><div class="muted">${escapeHtml(r.date)} · ${escapeHtml(r.type)}</div></div><div style="text-align:right"><strong style="color:${positive ? "var(--green)" : "#a23b2b"}">${positive ? "+" : "−"}${money(r.amount)}</strong><div><button class="danger" type="button" data-delete-record="${r.id}" style="padding:5px 8px;font-size:.78rem;margin-top:5px">Delete</button></div></div></div>`;
-    }
-    function bindRecordDeletes() {
-      document.querySelectorAll("[data-delete-record]").forEach(b => b.addEventListener("click", () => {
-        if (confirm("Delete this record?")) { data.records = data.records.filter(r => r.id !== b.dataset.deleteRecord); save(); }
-      }));
-    }
-    function render() {
-      const sales = data.records.filter(r => r.type === "Sale").reduce((s,r) => s+r.amount,0);
-      const expenses = data.records.filter(r => r.type === "Expense").reduce((s,r) => s+r.amount,0);
-      $("salesTotal").textContent = money(sales); $("expenseTotal").textContent = money(expenses); $("balanceTotal").textContent = money(sales-expenses);
-      $("recentRecords").innerHTML = data.records.length ? data.records.slice(0,5).map(recordHtml).join("") : '<div class="empty">Your sales and expenses will appear here.</div>';
-      $("allRecords").innerHTML = data.records.length ? data.records.map(recordHtml).join("") : '<div class="empty">No records yet.</div>';
-      bindRecordDeletes(); renderProducts(); renderStore();
-    }
-    $("exportCsv").addEventListener("click", () => {
-      const rows = [["Date","Type","Description","Amount (PGK)"], ...data.records.map(r => [r.date,r.type,r.item,r.amount])];
-      const csv = rows.map(row => row.map(v => `"${String(v).replace(/"/g,'""')}"`).join(",")).join("\r\n");
-      const blob = new Blob(["\uFEFF"+csv], {type:"text/csv;charset=utf-8;"});
-      const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href=url; a.download="meribiz-records.csv"; a.click(); URL.revokeObjectURL(url);
-    });
-    render();
-  </script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#176b57">
+<meta name="description" content="MeriBiz PNG helps women entrepreneurs manage products, sales and expenses."><title>MeriBiz PNG — Business, made simpler</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{--green:#176b57;--deep:#104638;--mint:#eaf4ee;--cream:#f6f8f5;--ink:#18231f;--muted:#68766e;--line:#dfe8e1;--white:#fff;--coral:#f2a28b;--red:#a73e31;--shadow:0 8px 28px #183d2a0a}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:11px;padding:0 8px}.logo{width:43px;height:43px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-size:23px;font-weight:850}.brand b{display:block;font-size:19px;letter-spacing:-.5px}.brand small{color:var(--muted);font-size:12px}.navlabel{padding:0 12px;color:#8a968e;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#526159;text-align:left;padding:12px 13px;border-radius:11px;font-weight:650;display:flex;align-items:center;gap:12px}.nav button.active,.nav button:hover{background:var(--mint);color:var(--green)}.nav .ico{width:22px;text-align:center;font-size:17px}.sidefoot{margin-top:auto;background:#f4f8f4;padding:14px;border-radius:14px;color:var(--muted);font-size:12px}.sidefoot b{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}.main{min-width:0}.topbar{height:76px;background:#ffffffd9;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,46px);gap:16px;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}.eyebrow{font-size:12px;color:var(--muted)}.topbar h1{font-size:21px;margin:1px 0 0;letter-spacing:-.5px}.top-actions{display:flex;align-items:center;gap:10px}.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;background:white;color:var(--muted)}.dot{width:7px;height:7px;border-radius:50%;background:#e2a13b}.dot.online{background:#2b9a63}.avatar{width:38px;height:38px;border-radius:50%;background:#f8dfd4;color:#6c3a2c;display:grid;place-items:center;font-weight:800}.content{padding:28px clamp(18px,4vw,46px) 46px;max-width:1500px;margin:auto}.welcome{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:23px}.welcome h2{font-size:25px;letter-spacing:-.7px;margin:0 0 4px}.welcome p{margin:0;color:var(--muted)}.btn{border:1px solid transparent;border-radius:10px;padding:10px 14px;background:var(--green);color:white;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{background:var(--deep)}.btn.secondary{background:white;border-color:var(--line);color:var(--ink)}.btn.soft{background:var(--mint);color:var(--green)}.btn.danger{background:#fff0ed;color:var(--red)}.btn:disabled{opacity:.5;cursor:not-allowed}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:19px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.stat{padding:19px}.stat-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:35px;height:35px;border-radius:11px;background:var(--mint);display:grid;place-items:center;font-size:17px}.stat strong{display:block;font-size:clamp(21px,2.7vw,29px);letter-spacing:-.8px;margin:11px 0 2px;overflow-wrap:anywhere}.stat small{color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:17px}.panel{padding:20px;margin-bottom:17px;min-width:0}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.panel h3{font-size:16px;margin:0 0 4px;letter-spacing:-.2px}.sub{color:var(--muted);font-size:13px;margin:0}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field.full{grid-column:1/-1}label{display:block;font-size:12px;font-weight:750;margin-bottom:6px;color:#48574e}input,select,textarea{width:100%;border:1px solid #d5e0d7;border-radius:10px;padding:11px 12px;background:white;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:#4b9b7e;box-shadow:0 0 0 3px #176b5714}textarea{resize:vertical}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}.records{display:grid}.record{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid #edf1ed}.record:last-child{border-bottom:0}.record-title{font-weight:750}.record-meta{font-size:12px;color:var(--muted)}.amount{font-weight:800;white-space:nowrap}.positive{color:var(--green)}.negative{color:var(--red)}.empty{padding:28px 14px;text-align:center;border:1px dashed #d4dfd6;border-radius:12px;color:var(--muted);font-size:13px}.product-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.product{border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;flex-direction:column;gap:9px}.product h4{margin:0;font-size:15px}.product .price{font-size:18px;font-weight:850;color:var(--green)}.tag{display:inline-block;border-radius:99px;padding:4px 8px;background:#f1f5f1;color:#58665e;font-size:11px}.product p{font-size:13px;color:var(--muted);margin:0}.product-actions{display:flex;gap:7px;margin-top:auto;flex-wrap:wrap}.product-actions .btn{font-size:12px;padding:7px 9px}.page{display:none}.page.active{display:block}.notice{background:#fff7e8;border:1px solid #f0dfb7;color:#66501e;padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:18px}.notice strong{color:#47350d}.status{font-size:12px;color:var(--muted);margin-top:10px;min-height:18px}.auth-wrap{min-height:100vh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at top left,#e3f2e8,transparent 52%),var(--cream)}.auth-card{background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:30px;width:min(460px,100%)}.auth-card .brand{padding:0;margin-bottom:25px}.auth-card h1{font-size:27px;letter-spacing:-.7px;margin:0 0 7px}.auth-card>p{color:var(--muted);margin:0 0 22px}.auth-switch{display:flex;gap:8px;margin-bottom:18px}.auth-switch button{flex:1}.auth-note{font-size:12px;color:var(--muted);margin-top:14px}.hidden{display:none!important}.mobilebrand{display:none}.toast{position:fixed;bottom:22px;right:22px;max-width:min(390px,calc(100vw - 32px));padding:13px 17px;background:#173c2e;color:white;border-radius:12px;box-shadow:0 12px 35px #0002;z-index:20}.footer-note{font-size:12px;color:var(--muted);text-align:center;padding:10px}.filelabel{display:inline-flex;align-items:center;gap:8px}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.sidebar{display:none}.mobilebrand{display:flex}.topbar{height:68px;padding:0 18px}.content{padding:22px 16px 35px}.layout{grid-template-columns:1fr}.stats{gap:9px}.stat{padding:13px}.stat-head{font-size:11px}.stat-icon{width:29px;height:29px}.stat strong{font-size:clamp(17px,4vw,24px)}.welcome{align-items:flex-start;flex-direction:column}.welcome h2{font-size:23px}.nav.mobile{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:10;background:white;border-top:1px solid var(--line);padding:6px 7px calc(6px + env(safe-area-inset-bottom));justify-content:space-around;gap:3px}.nav.mobile button{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;padding:6px 7px;flex:1;text-align:center}.nav.mobile .ico{font-size:18px}.content{padding-bottom:100px}.top-actions .pill{display:none}}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:15px}.topbar h1{font-size:18px}.product-list{grid-template-columns:1fr}.welcome .btn{width:100%}}
+</style></head><body>
+<div id="authScreen" class="auth-wrap"><section class="auth-card"><div class="brand"><div class="logo">M</div><div><b>MeriBiz <span style="color:var(--green)">PNG</span></b><small>Business, made simpler</small></div></div><h1 id="authTitle">Welcome to MeriBiz</h1><p id="authIntro">Your business tools, in one simple place.</p><div class="auth-switch"><button class="btn" id="showLogin">Sign in</button><button class="btn secondary" id="showSignup">Create account</button></div><form id="authForm"><div class="field" id="nameField"><label for="authName">Your name</label><input id="authName" autocomplete="name" placeholder="Full name"></div><div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></div><div class="field" style="margin-top:12px"><label for="authPassword">Password</label><input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></div><button class="btn" style="width:100%;margin-top:18px" id="authSubmit" type="submit">Sign in securely</button><div id="authStatus" class="status" role="status"></div></form><div class="auth-note">Your business records are private to your account. Use a password you do not use elsewhere.</div></section></div>
+<div id="appScreen" class="shell hidden"><aside class="sidebar"><div class="brand"><div class="logo">M</div><div><b>MeriBiz <span style="color:var(--green)">PNG</span></b><small>Business, made simpler</small></div></div><div class="navlabel">Workspace</div><nav class="nav" id="sideNav"><button class="active" data-page="dashboard"><span class="ico">▦</span>Overview</button><button data-page="products"><span class="ico">▧</span>Products & services</button><button data-page="records"><span class="ico">↗</span>Sales & expenses</button><button data-page="store"><span class="ico">⌂</span>Business profile</button></nav><div class="sidefoot"><b>Built for Meri in business 🇵🇬</b>Organise your work. Understand your numbers. Grow with confidence.</div><button class="btn secondary" id="signOut">↪ Sign out</button></aside>
+<main class="main"><header class="topbar"><div><div class="eyebrow">MERIBIZ PNG / <span id="crumb">OVERVIEW</span></div><h1 id="pageTitle">Overview</h1></div><div class="top-actions"><span class="pill"><span id="liveDot" class="dot"></span><span id="connectionText">Connecting…</span></span><div class="avatar" id="userAvatar">M</div><button class="btn secondary" id="mobileSignOut" title="Sign out">↪</button></div></header>
+<div class="content"><div class="notice" id="setupNotice"><strong>Setup needed:</strong> Add your Supabase project URL and public anon key in <code>app-config.js</code>, then run the SQL in <code>supabase-schema.sql</code>. Do not put a service-role key here.</div>
+<section id="page-dashboard" class="page active"><div class="welcome"><div><h2 id="greeting">Good day, Meri 👋</h2><p>Here’s how your business is doing.</p></div><button class="btn" id="quickSaleBtn">＋ Record a sale</button></div><div class="stats"><article class="stat"><div class="stat-head">Total sales <span class="stat-icon">↗</span></div><strong id="salesTotal">K0.00</strong><small>All recorded sales</small></article><article class="stat"><div class="stat-head">Total expenses <span class="stat-icon">↘</span></div><strong id="expenseTotal">K0.00</strong><small>All recorded expenses</small></article><article class="stat"><div class="stat-head">Sales minus expenses <span class="stat-icon">◎</span></div><strong id="balanceTotal">K0.00</strong><small>Not a formal profit calculation</small></article></div><div class="layout"><div><section class="panel" id="salePanel"><div class="panel-head"><div><h3>Record a sale</h3><p class="sub">Log a customer purchase in a few seconds.</p></div><span class="tag">INCOME</span></div><form id="saleForm"><div class="formgrid"><div class="field full"><label for="saleItem">What did you sell?</label><input id="saleItem" required maxlength="120" placeholder="e.g. Handmade bilum bag"></div><div class="field"><label for="saleAmount">Amount (K)</label><input id="saleAmount" type="number" min="0.01" step="0.01" required placeholder="45.00"></div><div class="field"><label for="saleDate">Sale date</label><input id="saleDate" type="date" required></div></div><div class="actions"><button class="btn" type="submit">Save sale</button></div></form><div id="saleStatus" class="status" role="status"></div></section><section class="panel"><div class="panel-head"><div><h3>Recent activity</h3><p class="sub">Your latest sales and expenses.</p></div><button class="btn secondary" data-goto="records">View all</button></div><div id="recentRecords" class="records"><div class="empty">Your activity will appear here.</div></div></section></div>
+<div><section class="panel"><div class="panel-head"><div><h3>Record an expense</h3><p class="sub">Keep track of business costs.</p></div><span class="tag">COST</span></div><form id="expenseForm"><div class="field"><label for="expenseItem">Expense description</label><input id="expenseItem" required maxlength="120" placeholder="e.g. Stock, transport, packaging"></div><div class="formgrid" style="margin-top:12px"><div class="field"><label for="expenseAmount">Amount (K)</label><input id="expenseAmount" type="number" min="0.01" step="0.01" required placeholder="20.00"></div><div class="field"><label for="expenseDate">Expense date</label><input id="expenseDate" type="date" required></div></div><div class="actions"><button class="btn" type="submit">Save expense</button></div></form><div id="expenseStatus" class="status" role="status"></div></section><section class="panel"><div class="panel-head"><div><h3>Business snapshot</h3><p class="sub">Your current catalogue.</p></div></div><div class="record"><div><div class="record-title">Products & services</div><div class="record-meta">Items you offer</div></div><strong id="productCount">0</strong></div><div class="record"><div><div class="record-title">Business profile</div><div class="record-meta">Your public-facing details</div></div><button class="btn soft" data-goto="store">Edit</button></div></section></div></div></section>
+<section id="page-products" class="page"><div class="welcome"><div><h2>Products & services</h2><p>Add what you sell and make it easy for customers to contact you.</p></div></div><div class="layout"><section class="panel"><div class="panel-head"><div><h3>Add a product or service</h3><p class="sub">Use clear names, descriptions and prices.</p></div></div><form id="productForm"><div class="field"><label for="productName">Product or service name</label><input id="productName" required maxlength="120" placeholder="e.g. Handmade bilum"></div><div class="formgrid" style="margin-top:12px"><div class="field"><label for="productPrice">Price (K)</label><input id="productPrice" type="number" min="0" step="0.01" required placeholder="45.00"></div><div class="field"><label for="productCategory">Category</label><select id="productCategory"><option>Clothing & crafts</option><option>Food & produce</option><option>Beauty</option><option>Services</option><option>Home & living</option><option>Other</option></select></div></div><div class="field" style="margin-top:12px"><label for="productDescription">Description (optional)</label><textarea id="productDescription" rows="3" maxlength="500" placeholder="Sizes, colours, how to order, delivery details…"></textarea></div><div class="field" style="margin-top:12px"><label for="sellerWhatsApp">WhatsApp number (optional)</label><input id="sellerWhatsApp" inputmode="tel" placeholder="675XXXXXXXX"></div><div class="actions"><button class="btn" type="submit">＋ Add product</button></div><div id="productStatus" class="status" role="status"></div></form></section><section class="panel"><div class="panel-head"><div><h3>Your catalogue</h3><p class="sub">Products are synced to your account.</p></div><span class="tag" id="catalogueCount">0 ITEMS</span></div><div id="productList" class="product-list"><div class="empty">No products yet. Add your first one.</div></div></section></div></section>
+<section id="page-records" class="page"><div class="welcome"><div><h2>Sales & expenses</h2><p>One place for your business recordbook.</p></div><button class="btn secondary" id="exportCsv">⇩ Export CSV</button></div><section class="panel"><div class="panel-head"><div><h3>All transactions</h3><p class="sub">Export your records for a spreadsheet or accountant.</p></div></div><div id="allRecords" class="records"><div class="empty">No records yet.</div></div><div id="recordsStatus" class="status" role="status"></div></section></section>
+<section id="page-store" class="page"><div class="welcome"><div><h2>Business profile</h2><p>Keep your business information up to date.</p></div></div><div class="layout"><section class="panel"><div class="panel-head"><div><h3>Your business details</h3><p class="sub">This information is stored in your account.</p></div></div><form id="storeForm"><div class="field"><label for="storeName">Business name</label><input id="storeName" required maxlength="120" placeholder="e.g. Kail's Sales"></div><div class="formgrid" style="margin-top:12px"><div class="field"><label for="storeLocation">Town / province</label><input id="storeLocation" maxlength="120" placeholder="e.g. Goroka, Eastern Highlands"></div><div class="field"><label for="storePhone">Business phone / WhatsApp</label><input id="storePhone" inputmode="tel" maxlength="30" placeholder="675XXXXXXXX"></div></div><div class="field" style="margin-top:12px"><label for="storeAbout">About your business</label><textarea id="storeAbout" rows="4" maxlength="1000" placeholder="Tell customers what you offer and what makes your business special."></textarea></div><div class="actions"><button class="btn" type="submit">Save profile</button></div><div id="storeStatus" class="status" role="status"></div></form></section><section class="panel"><div class="panel-head"><div><h3>Profile preview</h3><p class="sub">A simple preview of your business.</p></div></div><div id="storePreview" class="empty">Complete your business profile to preview it here.</div></section></div></section>
+<div class="footer-note">MeriBiz PNG · Made for women building businesses across Papua New Guinea 🇵🇬</div></div></main><nav class="nav mobile" id="mobileNav"><button class="active" data-page="dashboard"><span class="ico">▦</span>Overview</button><button data-page="products"><span class="ico">▧</span>Products</button><button data-page="records"><span class="ico">↗</span>Records</button><button data-page="store"><span class="ico">⌂</span>Profile</button></nav></div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app-config.js"></script>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);const money=n=>'K'+Number(n||0).toLocaleString('en-PG',{minimumFractionDigits:2,maximumFractionDigits:2});const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};$('saleDate').value=today();$('expenseDate').value=today();let supabase=null,user=null,products=[],records=[],store={business_name:'',location:'',about:'',phone:''},channel=null,authMode='login',toastTimer;
+const configured=()=>window.MERIBIZ_CONFIG&&MERIBIZ_CONFIG.url&&MERIBIZ_CONFIG.anonKey&&!MERIBIZ_CONFIG.url.includes('YOUR_')&&!MERIBIZ_CONFIG.anonKey.includes('YOUR_');function toast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),3500)}function status(id,msg){$(id).textContent=msg}function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function setAuthMode(mode){authMode=mode;const signup=mode==='signup';$('authTitle').textContent=signup?'Create your MeriBiz account':'Welcome to MeriBiz';$('authIntro').textContent=signup?'Start organising your business in one secure place.':'Your business tools, in one simple place.';$('nameField').classList.toggle('hidden',!signup);$('authName').required=signup;$('authSubmit').textContent=signup?'Create account':'Sign in securely';$('showLogin').className=signup?'btn secondary':'btn';$('showSignup').className=signup?'btn':'btn secondary';$('authPassword').autocomplete=signup?'new-password':'current-password';status('authStatus','')}$('showLogin').onclick=()=>setAuthMode('login');$('showSignup').onclick=()=>setAuthMode('signup');
+function showApp(){ $('authScreen').classList.add('hidden');$('appScreen').classList.remove('hidden');$('userAvatar').textContent=(user?.user_metadata?.full_name||user?.email||'M').trim().charAt(0).toUpperCase();const name=user?.user_metadata?.full_name?.split(' ')[0]||'Meri';$('greeting').textContent=`Good day, ${name} 👋`;if(!configured()){$('setupNotice').classList.remove('hidden');$('connectionText').textContent='Setup needed';$('liveDot').classList.remove('online')}else{$('setupNotice').classList.add('hidden')}}function showAuth(){ $('appScreen').classList.add('hidden');$('authScreen').classList.remove('hidden')}
+function navigate(page){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));const names={dashboard:['Overview','OVERVIEW'],products:['Products & services','PRODUCTS'],records:['Sales & expenses','RECORDS'],store:['Business profile','PROFILE']};$('pageTitle').textContent=names[page][0];$('crumb').textContent=names[page][1];if(page==='store')renderStore()}document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.goto)));$('quickSaleBtn').onclick=()=>{navigate('dashboard');$('saleItem').focus();$('salePanel').scrollIntoView({behavior:'smooth',block:'center'})};
+async function ensureProfile(){const {data,error}=await supabase.from('business_profiles').select('*').eq('user_id',user.id).maybeSingle();if(error)throw error;if(!data){const {error:e}=await supabase.from('business_profiles').insert({user_id:user.id,business_name:user.user_metadata?.full_name?`${user.user_metadata.full_name}'s Business`:''});if(e)throw e;store={business_name:user.user_metadata?.full_name?`${user.user_metadata.full_name}'s Business`:'',location:'',about:'',phone:''}}else store=data;fillStore()}
+function fillStore(){ $('storeName').value=store.business_name||'';$('storeLocation').value=store.location||'';$('storeAbout').value=store.about||'';$('storePhone').value=store.phone||'';renderStore()}
+async function loadData(){if(!supabase||!user)return;try{const [p,r,s]=await Promise.all([supabase.from('products').select('*').order('created_at',{ascending:false}),supabase.from('transactions').select('*').order('transaction_date',{ascending:false}).order('created_at',{ascending:false}),supabase.from('business_profiles').select('*').eq('user_id',user.id).maybeSingle()]);if(p.error)throw p.error;if(r.error)throw r.error;if(s.error)throw s.error;products=p.data||[];records=r.data||[];if(s.data)store=s.data;renderAll();fillStore();$('connectionText').textContent='Live sync on';$('liveDot').classList.add('online')}catch(e){console.error(e);$('connectionText').textContent='Sync issue';$('liveDot').classList.remove('online');toast('Could not load data. Check your Supabase setup.')}}
+function renderAll(){const sales=records.filter(r=>r.type==='sale').reduce((a,r)=>a+Number(r.amount),0),expenses=records.filter(r=>r.type==='expense').reduce((a,r)=>a+Number(r.amount),0);$('salesTotal').textContent=money(sales);$('expenseTotal').textContent=money(expenses);$('balanceTotal').textContent=money(sales-expenses);$('productCount').textContent=products.length;$('catalogueCount').textContent=`${products.length} ITEM${products.length===1?'':'S'}`;$('recentRecords').innerHTML=records.length?records.slice(0,5).map(recordHTML).join(''):'<div class="empty">No activity yet. Add your first sale or expense.</div>';$('allRecords').innerHTML=records.length?records.map(recordHTML).join(''):'<div class="empty">No transactions yet.</div>';$('productList').innerHTML=products.length?products.map(p=>`<article class="product"><div><span class="tag">${safe(p.category||'Other')}</span></div><h4>${safe(p.name)}</h4><div class="price">${money(p.price)}</div><p>${safe(p.description||'No description added.')}</p><div class="product-actions">${p.whatsapp?`<a class="btn soft" target="_blank" rel="noopener" href="https://wa.me/${safe(p.whatsapp.replace(/\D/g,''))}?text=${encodeURIComponent('Hello, I am interested in '+p.name+' listed for '+money(p.price)+'.')}">WhatsApp order</a>`:''}<button class="btn danger" data-delete-product="${safe(p.id)}" type="button">Remove</button></div></article>`).join(''):'<div class="empty">No products yet. Add your first product or service.</div>';document.querySelectorAll('[data-delete-product]').forEach(b=>b.onclick=()=>deleteProduct(b.dataset.deleteProduct));}
+function recordHTML(r){const sale=r.type==='sale';return `<div class="record"><div><div class="record-title">${safe(r.description)}</div><div class="record-meta">${safe(r.transaction_date)} · ${sale?'Sale':'Expense'}</div></div><div style="text-align:right"><div class="amount ${sale?'positive':'negative'}">${sale?'+':'−'}${money(r.amount)}</div><button class="btn danger" style="font-size:11px;padding:4px 8px;margin-top:5px" data-delete-record="${safe(r.id)}" type="button">Delete</button></div></div>`}
+async function addTransaction(type,form,statusId,itemId,amountId,dateId){if(!supabase){status(statusId,'Connect Supabase first.');return}const description=$(itemId).value.trim(),amount=Number($(amountId).value),date=$(dateId).value;if(!description||!Number.isFinite(amount)||amount<=0||!date)return;const {data,error}=await supabase.from('transactions').insert({user_id:user.id,type,description,amount,transaction_date:date}).select().single();if(error){console.error(error);status(statusId,'Not saved. Check your connection and database setup.');return}records.unshift(data);renderAll();form.reset();$(dateId).value=today();status(statusId,'Saved and synced to your account.');toast(type==='sale'?'Sale saved.':'Expense saved.');}
+$('saleForm').onsubmit=e=>{e.preventDefault();addTransaction('sale',e.target,'saleStatus','saleItem','saleAmount','saleDate')};$('expenseForm').onsubmit=e=>{e.preventDefault();addTransaction('expense',e.target,'expenseStatus','expenseItem','expenseAmount','expenseDate')};
+$('productForm').onsubmit=async e=>{e.preventDefault();if(!supabase)return status('productStatus','Connect Supabase first.');const payload={user_id:user.id,name:$('productName').value.trim(),price:Number($('productPrice').value),category:$('productCategory').value,description:$('productDescription').value.trim(),whatsapp:$('sellerWhatsApp').value.trim()};const {data,error}=await supabase.from('products').insert(payload).select().single();if(error){console.error(error);return status('productStatus','Could not save product. Check your connection and setup.')}products.unshift(data);renderAll();e.target.reset();status('productStatus','Product saved and synced.');toast('Product added.')};
+async function deleteProduct(id){if(!confirm('Remove this product from your catalogue?'))return;const {error}=await supabase.from('products').delete().eq('id',id);if(error)return toast('Could not remove product.');products=products.filter(p=>p.id!==id);renderAll();toast('Product removed.')}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-delete-record]');if(!b)return;if(!confirm('Delete this transaction? This cannot be undone.'))return;const {error}=await supabase.from('transactions').delete().eq('id',b.dataset.deleteRecord);if(error)return toast('Could not delete transaction.');records=records.filter(r=>String(r.id)!==b.dataset.deleteRecord);renderAll();toast('Transaction deleted.')});
+$('storeForm').onsubmit=async e=>{e.preventDefault();const next={user_id:user.id,business_name:$('storeName').value.trim(),location:$('storeLocation').value.trim(),about:$('storeAbout').value.trim(),phone:$('storePhone').value.trim()};const {data,error}=await supabase.from('business_profiles').upsert(next,{onConflict:'user_id'}).select().single();if(error){console.error(error);return status('storeStatus','Could not save profile. Check your connection and setup.')}store=data;renderStore();status('storeStatus','Business profile saved and synced.');toast('Business profile saved.')};
+function renderStore(){const s=store||{};$('storePreview').className=s.business_name?'':'empty';$('storePreview').innerHTML=s.business_name?`<div style="background:var(--mint);border-radius:13px;padding:18px;margin-bottom:13px"><div style="font-size:12px;color:var(--green);font-weight:800;letter-spacing:1px">MERIBIZ BUSINESS</div><h2 style="font-size:23px;margin:8px 0 3px">${safe(s.business_name)}</h2><div class="sub">${safe(s.location||'Papua New Guinea')}</div></div><p>${safe(s.about||'No business description yet.')}</p>${s.phone?`<p class="sub">Contact: ${safe(s.phone)}</p>`:''}<h3 style="margin-top:20px">Products & services</h3><div class="product-list">${products.length?products.slice(0,6).map(p=>`<div class="product"><h4>${safe(p.name)}</h4><div class="price">${money(p.price)}</div><p>${safe(p.description||p.category||'')}</p></div>`).join(''):'<div class="empty">Add products to show them here.</div>'}</div>`:'Complete your business profile to preview it here.'}
+$('exportCsv').onclick=()=>{const rows=[['Date','Type','Description','Amount (PGK)'],...records.map(r=>[r.transaction_date,r.type,r.description,r.amount])];const csv=rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));a.download='meribiz-records.csv';a.click();URL.revokeObjectURL(a.href)};
+async function subscribeRealtime(){if(channel)await supabase.removeChannel(channel);channel=supabase.channel('meribiz-user-'+user.id).on('postgres_changes',{event:'*',schema:'public',table:'products',filter:'user_id=eq.'+user.id},()=>loadData()).on('postgres_changes',{event:'*',schema:'public',table:'transactions',filter:'user_id=eq.'+user.id},()=>loadData()).on('postgres_changes',{event:'*',schema:'public',table:'business_profiles',filter:'user_id=eq.'+user.id},()=>loadData()).subscribe(state=>{const live=state==='SUBSCRIBED';$('connectionText').textContent=live?'Live sync on':state==='CHANNEL_ERROR'?'Sync issue':'Connecting…';$('liveDot').classList.toggle('online',live)})}
+async function startSession(session){if(!session){user=null;if(channel&&supabase){await supabase.removeChannel(channel);channel=null}showAuth();return}user=session.user;showApp();if(!configured())return;try{await ensureProfile();await loadData();await subscribeRealtime()}catch(e){console.error(e);toast('Database setup is incomplete. Follow README.md.')}}
+$('authForm').onsubmit=async e=>{e.preventDefault();if(!configured()){status('authStatus','Setup needed: add your Supabase URL and anon key to app-config.js.');return}if(!supabase){status('authStatus','Supabase client is not available. Check your internet connection.');return}const email=$('authEmail').value.trim(),password=$('authPassword').value;status('authStatus','Please wait…');$('authSubmit').disabled=true;try{if(authMode==='signup'){const {data,error}=await supabase.auth.signUp({email,password,options:{data:{full_name:$('authName').value.trim()}}});if(error)throw error;if(data.session)await startSession(data.session);else status('authStatus','Account created. Check your email to confirm, then sign in.')}else{const {data,error}=await supabase.auth.signInWithPassword({email,password});if(error)throw error;await startSession(data.session)}}catch(err){status('authStatus',err.message||'Could not sign in. Try again.')}finally{$('authSubmit').disabled=false}};
+async function signOut(){if(supabase)await supabase.auth.signOut();await startSession(null)}$('signOut').onclick=signOut;$('mobileSignOut').onclick=signOut;
+async function init(){if(!configured()){$('setupNotice').classList.remove('hidden');$('connectionText').textContent='Setup needed';setAuthMode('login');return}if(!window.supabase){status('authStatus','Could not load the secure sign-in service. Check your internet connection.');return}supabase=window.supabase.createClient(MERIBIZ_CONFIG.url,MERIBIZ_CONFIG.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});const {data:{session}}=await supabase.auth.getSession();await startSession(session);supabase.auth.onAuthStateChange((_event,nextSession)=>{if(nextSession?.user&&nextSession.user.id!==user?.id)startSession(nextSession);else if(!nextSession&&user)startSession(null)});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{})}init();
+})();
+</script></body></html>
