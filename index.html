@@ -318,4 +318,15 @@ $('authForm').onsubmit=async e=>{e.preventDefault();if(!configured()){status('au
 async function signOut(){if(supabase)await supabase.auth.signOut();await startSession(null)}$('signOut').onclick=signOut;$('mobileSignOut').onclick=signOut;
 async function init(){if(!configured()){$('setupNotice').classList.remove('hidden');$('connectionText').textContent='Setup needed';setAuthMode('login');return}if(!window.supabase){status('authStatus','Could not load the secure sign-in service. Check your internet connection.');return}supabase=window.supabase.createClient(MERIBIZ_CONFIG.url,MERIBIZ_CONFIG.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});const {data:{session}}=await supabase.auth.getSession();await startSession(session);supabase.auth.onAuthStateChange((_event,nextSession)=>{if(nextSession?.user&&nextSession.user.id!==user?.id)startSession(nextSession);else if(!nextSession&&user)startSession(null)});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{})}init();
 })();
-</script></body></html>
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .catch((error) => {
+          console.error("MeriBiz service worker registration failed:", error);
+        });
+    });
+  }
+</script>
+</body></html>
