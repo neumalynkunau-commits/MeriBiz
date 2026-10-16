@@ -1,0 +1,11 @@
+
+{
+  "name": "MeriBiz PNG",
+  "short_name": "MeriBiz",
+  "description": "Business management and product catalogue for women entrepreneurs in Papua New Guinea.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#176b45"
+}
